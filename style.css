@@ -1,3 +1,4 @@
+```css
 * {
     margin: 0;
     padding: 0;
@@ -5,24 +6,24 @@
 }
 
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1e40af;
-    --dark: #1e293b;
-    --light: #f8fafc;
-    --text: #334155;
+    --primary: #ff0015;
+    --primary-dark: #cc0010;
+    --dark: #080808;
+    --light: #151515;
+    --text: #ffffff;
     --radius: 12px;
-    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow: 0 4px 20px rgba(255,0,21,0.15);
 }
 
 body {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
-    background: var(--light);
-    color: var(--text);
+    background: #080808;
+    color: #ffffff;
     line-height: 1.8;
     direction: rtl;
 }
 
-/* ---------- هدر (Hero) ---------- */
+/* هدر */
 .hero {
     position: relative;
     height: 400px;
@@ -39,7 +40,11 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(37,99,235,0.85), rgba(30,41,59,0.85));
+    background: linear-gradient(
+        135deg,
+        rgba(230,0,18,0.85),
+        rgba(0,0,0,0.92)
+    );
 }
 
 .hero-content {
@@ -50,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     padding: 20px;
 }
 
@@ -58,7 +63,7 @@ body {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    background: #fff;
+    background: #ffffff;
     border-radius: 50%;
     padding: 8px;
     box-shadow: var(--shadow);
@@ -68,26 +73,28 @@ body {
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
+    50% { transform: translateY(-10px); }
 }
 
 .hero-content h1 {
     font-size: 2rem;
     margin-bottom: 10px;
+    color: #ff0015;
 }
 
 .hero-content p {
     font-size: 1.05rem;
-    opacity: 0.95;
+    color: #ffffff;
 }
 
-/* ---------- نوار ناوبری ---------- */
+/* منو */
 .navbar {
-    background: #fff;
+    background: #000000;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 2px solid #ff0015;
 }
 
 .navbar ul {
@@ -103,17 +110,17 @@ body {
     display: block;
     padding: 15px 25px;
     text-decoration: none;
-    color: var(--dark);
+    color: #ffffff;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .navbar a:hover {
-    color: var(--primary);
-    background: #eff6ff;
+    color: #ffffff;
+    background: #e60012;
 }
 
-/* ---------- بخش اصلی ---------- */
+/* بخش اصلی */
 .container {
     max-width: 1100px;
     margin: 40px auto;
@@ -124,24 +131,26 @@ body {
 }
 
 .card {
-    background: #fff;
+    background: #151515;
+    color: #ffffff;
     padding: 30px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 1px solid #292929;
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 30px rgba(255,0,21,0.25);
 }
 
 .card h2 {
-    color: var(--primary-dark);
+    color: #ff0015;
     font-size: 1.6rem;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--primary);
+    border-bottom: 3px solid #ff0015;
     display: inline-block;
 }
 
@@ -163,9 +172,10 @@ body {
     flex: 1;
     min-width: 250px;
     text-align: justify;
+    color: #eeeeee;
 }
 
-/* ---------- گرید خدمات ---------- */
+/* خدمات */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -173,43 +183,58 @@ body {
 }
 
 .grid-item {
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    background: #1a1a1a;
     padding: 25px;
     border-radius: var(--radius);
     text-align: center;
     transition: 0.3s;
-    border: 1px solid #dbeafe;
+    border: 1px solid #e60012;
+    color: #ffffff;
 }
 
 .grid-item:hover {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    background: #300000;
     transform: scale(1.03);
 }
 
 .grid-item h3 {
-    color: var(--primary-dark);
+    color: #ff0015;
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
 
-/* ---------- فوتر ---------- */
+/* فوتر */
 footer {
-    background: var(--dark);
-    color: #cbd5e1;
+    background: #000000;
+    color: #ffffff;
     text-align: center;
     padding: 25px 20px;
     margin-top: 50px;
     font-size: 0.95rem;
+    border-top: 3px solid #ff0015;
 }
 
-/* ---------- Responsive ---------- */
+/* لینک ها */
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ff0015;
+}
+
+/* واکنش گرا */
 @media (max-width: 768px) {
     .hero { height: 300px; }
     .hero-content h1 { font-size: 1.4rem; }
     .hero-content p { font-size: 0.9rem; }
     .logo { width: 70px; height: 70px; }
-    .navbar a { padding: 12px 15px; font-size: 0.9rem; }
+    .navbar a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
     .card { padding: 20px; }
     .card h2 { font-size: 1.3rem; }
     .content-img { width: 100%; }
 }
+```
